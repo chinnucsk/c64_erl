@@ -4,7 +4,7 @@ REBAR = ./rebar
 .PHONY: doc deps
 
 # default task
-all: deps compile escript
+all: deps compile
 
 dev: dev_compile
 
