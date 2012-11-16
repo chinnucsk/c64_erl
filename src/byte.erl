@@ -16,7 +16,7 @@ set(Nth, Byte, Binary)
   when is_integer(Nth), Nth >= 0,
        is_integer(Byte), Byte < 256, Byte >= 0,
        is_binary(Binary) ->
-    Left = binary:part(Binary, Nth, 1),
-    Pos = Nth + 2,
+    Left = binary:part(Binary, 0, Nth),
+    Pos = Nth + 1,
     Right = binary:part(Binary, Pos, byte_size(Binary) - Pos),
     <<Left/binary, Byte, Right/binary>>.
